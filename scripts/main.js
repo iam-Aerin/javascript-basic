@@ -222,3 +222,38 @@ myInput.addEventListener('keydown', function(e){
     // console.log(e)
     console.log(myInput.value)
 })
+
+// 비동기
+console.log('hi')
+setTimeout(function(){console.log('1234')}, 1000)
+// 이게 아래 bye코드 보다 윗줄에 적혀있지만 시간 setTimeout 때문에 1초 이후 실행됨
+console.log('bye')
+
+// Request 요청보내기
+const URL = 'https://jsonplaceholder.typicode.com/todos/1'
+
+// 병렬로 어떠한 일처리를 하는 방법: 비동기기
+// 비동기 처리 방법 1 (promise pattern)
+
+let response = fetch(URL)
+    .then(response => response.json())
+    .then(json => console.log(json))
+
+// 비동기 처리 방법 2 (async await)
+async function fetchTodo(url){
+    let res = await fetch(url)
+    let result =  await res.json()
+    console.log(result)
+}
+console.log(fetchTodo(URL))
+
+
+// eventListener를 여러개에 붙여보자
+let liArray = document.querySelectorAll('li')
+console.log(liArray)
+
+liArray.forEach(function(item){
+    item.addEventListener('click', function(e){
+        console.log(e.target.textContent)
+    })
+})

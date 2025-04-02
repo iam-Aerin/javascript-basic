@@ -17,15 +17,15 @@ p, li {
 
 
 html {
-  background-color: #5d6363;
+  background-color: #2e7e67;
 }
 
 body {
   width: 600px;
   margin: 0 auto;
-  background-color: #7b8181;
+  background-color: #60516f;
   padding: 0 20px 20px 20px;
-  border: 5px solid rgb(51, 234, 109);
+  border: 5px solid rgb(207, 167, 157);
 }
 
 h1 {
